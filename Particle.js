@@ -38,7 +38,7 @@ class Particle {
     display() {
         noStroke();
 
-        fill(255 - this.col, this.velocity.y * 3, this.col, this.lifespan);
+        fill(this.col, this.colorspan * 3, this.col, this.lifespan);
 
         rect(this.position.x, this.position.y, this.size, this.size);
         noFill();
@@ -65,7 +65,7 @@ class Particle {
         if (this.position.y > height) {
             this.position.y = height;
             this.velocity.y *= -1;
-        
+            
         }
      
     }
