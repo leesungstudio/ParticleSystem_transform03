@@ -40,7 +40,10 @@ class Particle {
 
         fill(255 - this.col, this.velocity.y * 3, this.col, this.lifespan);
 
-        ellipse(this.position.x, this.position.y, this.size, this.size);
+        rect(this.position.x, this.position.y, this.size, this.size);
+        noFill();
+        stroke(255);
+        ellipse(this.position.x + this.size/2, this.position.y+ this.size/2, this.size, this.size);
     }
     bounceOffWalls() {
 
@@ -62,11 +65,14 @@ class Particle {
         if (this.position.y > height) {
             this.position.y = height;
             this.velocity.y *= -1;
+        
         }
+     
     }
 
     // Is the particle still useful?
     isDead() {
         return this.lifespan < 0;
     }
+ 
 }
